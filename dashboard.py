@@ -16,11 +16,20 @@ FILE_PATH = "data_kuesioner.xlsx"
 # =============================
 # LOAD DATA
 # =============================
+FILE_PATH = "data_kuesioner.xlsx"
+
 @st.cache_data
 def load_data():
-    return pd.read_excel("data_kuesioner.xlsx")
+    try:
+        return pd.read_excel(FILE_PATH, engine="openpyxl")
+    except Exception as e:
+        st.error(f"Gagal membaca data: {e}")
+        return pd.DataFrame()
 
 df = load_data()
+
+if df.empty:
+    st.stop()
 
 questions = df.columns.tolist()
 
