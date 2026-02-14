@@ -16,7 +16,11 @@ FILE_PATH = "data_kuesioner.xlsx"
 # =============================
 # LOAD DATA
 # =============================
-df = pd.read_excel(FILE_PATH)
+@st.cache_data
+def load_data():
+    return pd.read_excel("data_kuesioner.xlsx")
+
+df = load_data()
 
 questions = df.columns.tolist()
 
