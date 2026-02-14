@@ -11,7 +11,7 @@ st.set_page_config(page_title="Dashboard Kuesioner|By:Jose Napitupulu",
                     layout="wide",
                     page_icon="📊")
 
-FILE_PATH = r"C:\Users\LENOVO\OneDrive\Documents\pemodelan dan simulasi\modsim-2026-p2-ifs25026-latihan\data_kuesioner.xlsx"
+FILE_PATH = "data_kuesioner.xlsx"
 
 # =============================
 # LOAD DATA
